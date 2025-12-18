@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliot Megdal & Associates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c9a961;
+            --bg: #fafaf8;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg);
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .geometric-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 80%;
+            height: 140%;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.03) 0%, transparent 50%);
+            transform: rotate(-15deg);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .geometric-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.02) 0%, transparent 70%);
+            transform: rotate(12deg);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-30px); }
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+            margin: 0 auto 2.5rem;
+            animation: expandLine 0.8s ease-out 0.3s backwards;
+        }
+
+        @keyframes expandLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 60px;
+            }
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.2s ease-out 0.2s backwards;
+        }
+
+        .ampersand {
+            font-weight: 400;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 3rem;
+            animation: fadeIn 1.2s ease-out 0.4s backwards;
+        }
+
+        .contact {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            animation: fadeIn 1.2s ease-out 0.6s backwards;
+        }
+
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 2px;
+        }
+
+        .contact a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .ornament {
+            width: 40px;
+            height: 40px;
+            margin: 3rem auto 0;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .subtitle {
+                letter-spacing: 0.06em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="geometric-bg"></div>
+        <div class="content">
+            <div class="accent-line"></div>
+            <h1>
+                Elliot Megdal<br>
+                <span class="ampersand">&</span> Associates
+            </h1>
+            <div class="subtitle">Professional Services</div>
+            <div class="contact">
+                <a href="mailto:operations@elliotmegdal.com">contact@elliotmegdal.com</a>
+            </div>
+            <svg class="ornament" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
