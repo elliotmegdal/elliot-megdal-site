@@ -158,6 +158,112 @@ h1 {
     to { transform: rotate(360deg); }
 }
 
+.footer {
+    margin-top: 2rem;
+    animation: fadeIn 1.2s ease-out 0.8s backwards;
+}
+
+.footer a {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+/* Privacy Policy Page Styles */
+.policy-container {
+    align-items: flex-start;
+    padding: 3rem 2rem;
+}
+
+.policy-content {
+    max-width: 800px;
+    text-align: left;
+}
+
+.policy-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.policy-content .accent-line {
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.effective-date {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+.policy-text {
+    line-height: 1.8;
+}
+
+.policy-text p {
+    margin-bottom: 1.25rem;
+}
+
+.policy-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.policy-text ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.policy-text li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.policy-text a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.policy-text a:hover {
+    border-color: var(--accent);
+}
+
+.contact-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(201, 169, 97, 0.05);
+    border-left: 3px solid var(--accent);
+}
+
+.policy-content .ornament {
+    display: block;
+    margin: 3rem auto 0;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 1.5rem;
@@ -165,5 +271,13 @@ h1 {
 
     .subtitle {
         letter-spacing: 0.06em;
+    }
+
+    .policy-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .policy-text h2 {
+        font-size: 1.25rem;
     }
 }
